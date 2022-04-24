@@ -34,6 +34,13 @@ class TestCredentials(unittest.TestCase):
 
     def test_save_multiple_passwords(self):
         """
-        test_save_multiple_passwords to check
+        test_save_multiple_passwords to check if we can save multiple passwords obejects to our passwords_list
+        """
+        self.new_passwords.save_passwords()
+        test_passwords = User("Cheryl","Hadassah","chadassah@gmail.com","Chada12")
+        test_passwords.save_passwords()
+        self.assertEqual(len(User.passwords_list),2)
+
+
 if __name__ == '__main__':
     unittest.main()

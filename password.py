@@ -25,3 +25,11 @@ class User:
         save_passwords method saves passwords objects into passwords_list
         """
         User.passwords_list.append(self)
+
+    def tearDown(self):
+        """
+        tearDown method that does clean up after each test case has run
+        """
+        User.passwords_list = []
+
+    def
