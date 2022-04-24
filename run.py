@@ -105,5 +105,5 @@ def main():
                     elif short_code == "ex":
                             print("Bye .......")
                             break
-                    # else:
-                    #         print("I really didn't get that. Please use the short codes")
+                    else:
+                            print("I really didn't get that. Please use the short codes")
