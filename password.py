@@ -39,7 +39,24 @@ class User:
         test_passwords = User("Cheryl","Hadassah","chadassah@gmail.com","Chada12")
         test_passwords.save_passwords()
         self.assertEqual(len(User.passwords_list),2)
+    
+    def delete_password(self):
+        """
+        delete_passwords method deletes a saved password from the passwords_list
+        """
+        User.passwords_list.remove(self)
 
-
+    @classmethod
+    def find_by_email(cls,email):
+        """
+        Method that takes in an email and returns a password that matches that email.
+        Args:
+            email: email to search for
+        Returns:
+            password of person that matches the email.
+        """
+        for passwords in cls.passwords_list:
+            if passwords.email == email:
+                return password
 if __name__ =='__main__':
     unittest.main()    
