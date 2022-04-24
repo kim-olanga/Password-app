@@ -69,5 +69,12 @@ class TestCredentials(unittest.TestCase):
         passwords_exists = User.passwords_exists("chadassah@gmail.com")
         self.assertTrue(passwords_exists)
 
+ def test_display_all_passwords(self):
+        '''
+        method that returns a list of all passwords saved
+        '''
+
+        self.assertEqual(User.display_passwords(),User.passwords_list)
+
 if __name__ == '__main__':
     unittest.main()

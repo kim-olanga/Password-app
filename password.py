@@ -73,5 +73,12 @@ class User:
                 return True
         return False 
 
+    @classmethod
+    def display_passwords(cls):
+        '''
+        method that returns the passwords list
+        '''
+        return cls.passwords_list
+
 if __name__ =='__main__':
     unittest.main()    
