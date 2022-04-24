@@ -3,8 +3,8 @@ class User:
     class that generates new instances of passwords
     """
 
-    password_list = [] #List is empty..
-    def __init__(self,first_name,last_name,email,password):
+    passwords_list = [] #List is empty..
+    def __init__(self,first_name,last_name,email,passwords):
             # """
             # __init__ methods that helps us define properties for our objects.
 
@@ -18,4 +18,4 @@ class User:
             self.first_name = first_name
             self.last_name = last_name
             self.email = email
-            self.password = password
+            self.passwords = passwords
