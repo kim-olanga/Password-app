@@ -59,6 +59,19 @@ class User:
             if passwords.email == email:
                 return passwords
 
+    @classmethod
+    def passwords_exists(cls,email):
+        """
+        Method that checks if passwords exists from the passwords list.
+        Args:
+            email: email to search for
+        Returns:
+            Boolean: True or false depending if the password exists
+        """
+        for passwords in cls.passwords_list:
+            if passwords.email ==email:
+                return True
+        return False 
 
 if __name__ =='__main__':
     unittest.main()    

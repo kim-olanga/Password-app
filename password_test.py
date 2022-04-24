@@ -28,7 +28,7 @@ class TestCredentials(unittest.TestCase):
         test_save_passwords test case to test if the contact object is saved into the passwords_list
         """
         self.new_passwords.save_passwords()
-        self.assertEqual(len(User.passwords_list),6)
+        self.assertEqual(len(User.passwords_list),8)
 
  def test_save_multiple_passwords(self):
         """
@@ -37,7 +37,7 @@ class TestCredentials(unittest.TestCase):
         self.new_passwords.save_passwords()
         test_passwords = User("Cheryl","Hadassah","chadassah@gmail.com","Chada12")
         test_passwords.save_passwords()
-        self.assertEqual(len(User.passwords_list),5)
+        self.assertEqual(len(User.passwords_list),7)
 
  def test_delete_passwords(self):
         """
@@ -58,6 +58,16 @@ class TestCredentials(unittest.TestCase):
        test_passwords.save_passwords()
        found_passwords = User.find_by_email("chadassah@gmail.com")
        self.assertEqual(found_passwords.first_name,test_passwords.first_name)
+
+ def test_passwords_exists(self):
+        """
+        test to check if we can return a Boolean if we cannot find the passwords.
+        """
+        self.new_passwords.save_passwords()
+        test_passwords =User("Cheryl","Hadassah","chadassah@gmail.com","Chada12")
+        test_passwords.save_passwords()
+        passwords_exists = User.passwords_exists("chadassah@gmail.com")
+        self.assertTrue(passwords_exists)
 
 if __name__ == '__main__':
     unittest.main()
