@@ -46,9 +46,9 @@ class User:
         Returns:
             password of person that matches the email.
         """
-        for passwords in cls.passwords_list:
-            if passwords.email == email:
-                return passwords
+        # for passwords in cls.passwords_list:
+        #     if passwords.email == email:
+        #         return passwords
 
     @classmethod
     def passwords_exists(cls,email):
